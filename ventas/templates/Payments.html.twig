@@ -1,0 +1,33 @@
+{% extends('base.html.twig') %}
+{% block title %}
+<title>Bienvenido</title>
+{% endblock %}
+
+{% block stylesheets %}  {% endblock %}
+{% block body %} 
+    <h1 class="h1 text-center">Estamos en payments</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>CustomerNumber</th>
+                <th>checkNumber</th>
+                <th>paymentDate</th>
+                <th>Amount</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for payments in lista %}
+            <tr class="text-center">
+                <td> {{ payments.customernumber }} </td>
+                <td> {{ payments.lastchecknumbername }} </td>
+                <td> {{ payments.paymentdate }} </td>
+                <td> {{ payments.amount }} </td>
+                <td> <button class="btn btn-outline-warning"><i class="fas fa-pen"></i></button> </td>
+                <td> <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button> </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends('base.html.twig') %}
+{% block title %}
+<title>Bienvenido</title>
+{% endblock %}
+
+{% block stylesheets %}  {% endblock %}
+{% block body %} 
+    <h1 class="h1 text-center">Estamos en Offices</h1> 
+        <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>officeCode</th>
+                <th>city</th>
+                <th>phone</th>
+                <th>AdressLine1</th>
+                <th>AdressLine2</th>
+                <th>state</th>
+                <th>country</th>
+                <th>postalCode</th>
+                <th>territory</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for office in lista %}
+            <tr class="text-center">
+                <td> {{ office.officecode }} </td>
+                <td> {{ office.city }} </td>
+                <td> {{ office.phone }} </td>
+                <td> {{ office.addressline1 }} </td>
+                <td> {{ office.addressline2 }} </td>
+                <td> {{ office.state }} </td>
+                <td> {{ office.country }} </td>
+                <td> {{ office.postalcode }} </td>
+                <td> {{ office.territory }} </td>
+                <td> <button class="btn btn-outline-warning"><i class="fas fa-pen"></i></button> </td>
+                <td> <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button> </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

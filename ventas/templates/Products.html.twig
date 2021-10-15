@@ -1,0 +1,41 @@
+{% extends('base.html.twig') %}
+{% block title %}
+<title>Bienvenido</title>
+{% endblock %}
+
+{% block stylesheets %}  {% endblock %}
+{% block body %} 
+    <h1 class="h1 text-center">Estamos en Products</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>productCode</th>
+                <th>productname</th>
+                <th>productscale</th>
+                <th>productvendor</th>
+                <th>productdescription</th>
+                <th>quantityInStock</th>
+                <th>buyPrice</th>
+                <th>MSRP</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for products in lista %}
+            <tr class="text-center">
+                <td> {{ products.productcode }} </td>
+                <td> {{ products.productname }} </td>
+                <td> {{ products.productscale }} </td>
+                <td> {{ products.productvendor }} </td>
+                <td> {{ products.productdescription }} </td>
+                <td> {{ products.quantityinstock }} </td>
+                <td> {{ products.buyprice }} </td>
+                <td> {{ products.msrp }} </td>                
+                <td> <button class="btn btn-outline-warning"><i class="fas fa-pen"></i></button> </td>
+                <td> <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button> </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

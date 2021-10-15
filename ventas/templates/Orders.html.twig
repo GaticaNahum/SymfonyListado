@@ -1,0 +1,41 @@
+{% extends('base.html.twig') %}
+{% block title %}
+<title>Bienvenido</title>
+{% endblock %}
+
+{% block stylesheets %}  {% endblock %}
+{% block body %} 
+    <h1 class="h1 text-center">Estamos en orders</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>EmployeeNumber</th>
+                <th>Lastname</th>
+                <th>Firstname</th>
+                <th>Extension</th>
+                <th>Email</th>
+                <th>officeCode</th>
+                <th>ReportsTo</th>
+                <th>JobTitle</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for employees in lista %}
+            <tr class="text-center">
+                <td> {{ employees.employeenumber }} </td>
+                <td> {{ employees.lastname }} </td>
+                <td> {{ employees.firstname }} </td>
+                <td> {{ employees.extension }} </td>
+                <td> {{ employees.email }} </td>
+                <td> {{ employees.officecode }} </td>
+                <td> {{ employees.reportsTo }} </td>
+                <td> {{ employees.jobtitle }} </td>
+                <td> <button class="btn btn-outline-warning"><i class="fas fa-pen"></i></button> </td>
+                <td> <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button> </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends('base.html.twig') %}
+{% block title %}
+<title>Bienvenido</title>
+{% endblock %}
+
+{% block stylesheets %}  {% endblock %}
+{% block body %} 
+    <h1 class="h1 text-center">Estamos en customers</h1>
+    <table class="table table-dark">
+        <thead>
+            <tr class="text-center">
+                <th>#</th>
+                <th>CustomerName</th>
+                <th>ContactLastName</th>
+                <th>ContactLastName</th>
+                <th>phone</th>
+                <th>AdressLine1</th>
+                <th>AdressLine2</th>
+                <th>City</th>
+                <th>state</th>
+                <th>PostalCode</th>
+                <th>Country</th>
+                <th>CreditLimit</th>
+                <th>Actualizar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for customer in lista %}
+            <tr class="text-center">
+                <td> {{ customer.customernumber }} </td>
+                <td> {{ customer.customername }} </td>
+                <td> {{ customer.contactlastname }} </td>
+                <td> {{ customer.contactfirstname }} </td>
+                <td> {{ customer.phone }} </td>
+                <td> {{ customer.addressline1 }} </td>
+                <td> {{ customer.addressline2 }} </td>
+                <td> {{ customer.city }} </td>
+                <td> {{ customer.state }} </td>
+                <td> {{ customer.postalcode }} </td>
+                <td> {{ customer.country }} </td>
+                <td> {{ customer.creditlimit }} </td>
+                <td> <button class="btn btn-outline-warning"><i class="fas fa-pen"></i></button> </td>
+                <td> <button class="btn btn-outline-danger"><i class="fas fa-trash"></i></button> </td>
+            </tr>
+         {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
